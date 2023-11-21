@@ -11,7 +11,8 @@ struct PlantDetailsView: View {
     
     var plants : FetchedResults<Plant>.Element
     
-    @State private var isWatering : Bool = false
+    @State private var isWatering : Bool = false // If FALSE, it's not watering
+    @State private var isFinished : Bool = false
     @State private var progress : Double = 0.0
     let timer = Timer.publish(every: 1.0, on: .main, in: .common).autoconnect()
     
@@ -25,7 +26,7 @@ struct PlantDetailsView: View {
                 .font(.system(size: 30, weight: .medium, design: .rounded))
             
             if let lastDateWatered = plants.lastDateWatered {
-                Text("Last time watered: \(lastDateWatered.formatted())")
+                Text("Last time watered: \(lastDateWatered.formatted(.dateTime.day().month().year().hour().minute()))")
             } else {
                 Text("Last time watered: Never watered")
             }
@@ -36,8 +37,10 @@ struct PlantDetailsView: View {
                 withAnimation {
                     if !isWatering {
                         progress += 1.0
+                        isFinished = false
                     }
                     isWatering.toggle()
+                    isFinished = true
                 }
             }
             .foregroundStyle(.white)
@@ -54,26 +57,12 @@ struct PlantDetailsView: View {
                             progress += 1.0
                         }
                         
-                        if progress >= 100 {
-                            // Only update lastDateWatered when the watering cycle is finished (isWatering = false)
-                            if !isWatering {
-                                plants.lastDateWatered = Date()
-                                
-                                // Save the changes to the managed object context on the main thread
-                                DispatchQueue.main.async {
-                                    do {
-                                        try plants.managedObjectContext?.save()
-                                    } catch {
-                                        // Handle the error
-                                        print("Error saving lastDateWatered: \(error)")
-                                    }
-                                    
-                                    // Reset progress for the next watering session
-                                    progress = 0.0
-                                    
-                                    // Invalidate the timer
-                                    timer.upstream.connect().cancel()
-                                }
+                        if isFinished {
+                            plants.lastDateWatered = Date()
+                            do {
+                                try plants.managedObjectContext?.save()
+                            } catch {
+                                print("Failure Message: \(error)")
                             }
                         }
                     }
@@ -86,7 +75,3 @@ struct PlantDetailsView: View {
         .padding()
     }
 }
-
-//#Preview {
-//    PlantDetailsView()
-//}
