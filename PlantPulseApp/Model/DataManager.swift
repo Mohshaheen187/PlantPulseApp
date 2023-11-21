@@ -38,9 +38,4 @@ class DataManager : ObservableObject {
         
         saveNewPlant(context: context)
     }
-    
-    func deletePlant(plant: Plant, context: NSManagedObjectContext) {
-        context.delete(plant)
-        saveNewPlant(context: context)
-    }
 }

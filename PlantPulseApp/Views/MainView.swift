@@ -11,6 +11,7 @@ struct MainView: View {
     
     @State private var addPlant: Bool = false
     @State private var selectedIndex: Int = 1
+    @State private var selectedPlant: Plant?
     
     @EnvironmentObject var manager: DataManager
     @Environment(\.managedObjectContext) private var viewContext
@@ -34,6 +35,7 @@ struct MainView: View {
                     }
                     .tag(plant.id)
                 }
+                .onDelete(perform: deletePlant)
             }
             .navigationTitle("Plants")
             .listStyle(.inset)
@@ -50,7 +52,18 @@ struct MainView: View {
                             .presentationDetents([.fraction(0.5)])
                     })
                 }
+                
+                ToolbarItem(placement: .topBarLeading) {
+                    EditButton()
+                }
             }
+        }
+    }
+    
+    private func deletePlant(offsets: IndexSet) {
+        withAnimation {
+            offsets.map { plants[$0] }.forEach(viewContext.delete)
+            DataManager().saveNewPlant(context: viewContext)
         }
     }
 }
