@@ -3,6 +3,7 @@
     <entity name="Plant" representedClassName="Plant" syncable="YES" codeGenerationType="class">
         <attribute name="date" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="lastDateWatered" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="plantImage" optional="YES" attributeType="String"/>
         <attribute name="plantType" optional="YES" attributeType="String"/>
     </entity>

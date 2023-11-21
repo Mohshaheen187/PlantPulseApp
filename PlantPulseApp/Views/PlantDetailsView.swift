@@ -24,7 +24,11 @@ struct PlantDetailsView: View {
             Text(plants.plantType!.capitalized)
                 .font(.system(size: 30, weight: .medium, design: .rounded))
             
-            Text("Last time watered: ")
+            if let lastDateWatered = plants.lastDateWatered {
+                Text("Last time watered: \(lastDateWatered.formatted())")
+            } else {
+                Text("Last time watered: Never watered")
+            }
             
             Spacer()
             
@@ -38,7 +42,7 @@ struct PlantDetailsView: View {
             }
             .foregroundStyle(.white)
             .bold()
-            .frame(width: 100, height: 100)
+            .frame(width: 130, height: 130)
             .background(.linearGradient(colors: [.blue, .purple], startPoint: .bottomLeading, endPoint: .topTrailing))
             .clipShape(Circle())
             
@@ -51,8 +55,26 @@ struct PlantDetailsView: View {
                         }
                         
                         if progress >= 100 {
-                            // Watering is finished, invalidate the timer
-                            timer.upstream.connect().cancel()
+                            // Only update lastDateWatered when the watering cycle is finished (isWatering = false)
+                            if !isWatering {
+                                plants.lastDateWatered = Date()
+                                
+                                // Save the changes to the managed object context on the main thread
+                                DispatchQueue.main.async {
+                                    do {
+                                        try plants.managedObjectContext?.save()
+                                    } catch {
+                                        // Handle the error
+                                        print("Error saving lastDateWatered: \(error)")
+                                    }
+                                    
+                                    // Reset progress for the next watering session
+                                    progress = 0.0
+                                    
+                                    // Invalidate the timer
+                                    timer.upstream.connect().cancel()
+                                }
+                            }
                         }
                     }
             }
