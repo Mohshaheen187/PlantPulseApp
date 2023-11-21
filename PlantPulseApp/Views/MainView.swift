@@ -18,46 +18,23 @@ struct MainView: View {
     
     var body: some View {
         NavigationView {
-            TabView(selection: $selectedIndex) {
+            List {
                 ForEach(plants) { plant in
                     NavigationLink {
                         PlantDetailsView(plants: plant)
                     } label: {
-                        RoundedRectangle(cornerRadius: 20.0)
-                            .fill(Color.white)
-                            .shadow(radius: 10)
-                            .overlay {
-                                VStack {
-                                    Image((plant.plantImage != nil) ? plant.plantImage! : "xmark")
-                                        .resizable()
-                                        .frame(width: 150, height: 150)
-                                        .clipShape(Circle())
-                                    Text(plant.plantType!.capitalized)
-                                        .font(.system(size: 30, weight: .medium, design: .rounded))
-                                        
-                                    if let date = plant.date {
-                                        Text("Date planted: \(date.formatted(.dateTime.day().month().year()))")
-                                    }
-                                }
-                                .padding()
-                            }
-                            .frame(height: 400)
-                            .padding()
+                        HStack {
+                            Image((plant.plantImage != nil) ? plant.plantImage! : "questionmark.circle.fill")
+                                .resizable()
+                                .frame(width: 70, height: 70)
+                                .clipShape(Circle())
+                            Text(plant.plantType!.capitalized)
+                                .font(.system(size: 20, weight: .medium, design: .rounded))
+                        }
                     }
                     .tag(plant.id)
-                    .contextMenu {
-                        Button("Delete", role: .destructive) {
-                            DataManager().deletePlant(plant: plant, context: viewContext)
-                        }
-                        
-                        Button("Edit") {
-                            
-                        }
-                    }
                 }
             }
-            .tabViewStyle(.page(indexDisplayMode: .never))
-            .indexViewStyle(.page(backgroundDisplayMode: .always))
             .navigationTitle("Plants")
             .listStyle(.inset)
             .toolbar {
