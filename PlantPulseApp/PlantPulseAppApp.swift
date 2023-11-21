@@ -9,9 +9,12 @@ import SwiftUI
 
 @main
 struct PlantPulseAppApp: App {
+    @StateObject private var manager = DataManager()
+    
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            MainView()
+                .environment(\.managedObjectContext, manager.container.viewContext)
         }
     }
 }

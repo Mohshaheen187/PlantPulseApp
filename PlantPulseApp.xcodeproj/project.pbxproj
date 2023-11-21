@@ -8,17 +8,31 @@
 
 /* Begin PBXBuildFile section */
 		6AF2A3E72B0CD35F002EAFF2 /* PlantPulseAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AF2A3E62B0CD35F002EAFF2 /* PlantPulseAppApp.swift */; };
-		6AF2A3E92B0CD35F002EAFF2 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AF2A3E82B0CD35F002EAFF2 /* ContentView.swift */; };
+		6AF2A3E92B0CD35F002EAFF2 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AF2A3E82B0CD35F002EAFF2 /* MainView.swift */; };
 		6AF2A3EB2B0CD360002EAFF2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6AF2A3EA2B0CD360002EAFF2 /* Assets.xcassets */; };
 		6AF2A3EE2B0CD360002EAFF2 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6AF2A3ED2B0CD360002EAFF2 /* Preview Assets.xcassets */; };
+		6AF2A3F92B0CD475002EAFF2 /* plantPulse.json in Resources */ = {isa = PBXBuildFile; fileRef = 6AF2A3F82B0CD475002EAFF2 /* plantPulse.json */; };
+		6AF2A3FB2B0CD48C002EAFF2 /* TimeFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AF2A3FA2B0CD48C002EAFF2 /* TimeFormatter.swift */; };
+		6AF2A3FD2B0CD4A3002EAFF2 /* AddNewPlantView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AF2A3FC2B0CD4A3002EAFF2 /* AddNewPlantView.swift */; };
+		6AF2A3FF2B0CD4DB002EAFF2 /* PlantDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AF2A3FE2B0CD4DB002EAFF2 /* PlantDetailsView.swift */; };
+		6AF2A4022B0CD4F6002EAFF2 /* PlantsModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 6AF2A4002B0CD4F6002EAFF2 /* PlantsModel.xcdatamodeld */; };
+		6AF2A4042B0CD539002EAFF2 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AF2A4032B0CD539002EAFF2 /* DataManager.swift */; };
+		6AF2A4062B0CD559002EAFF2 /* Plants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AF2A4052B0CD559002EAFF2 /* Plants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		6AF2A3E32B0CD35F002EAFF2 /* PlantPulseApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PlantPulseApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6AF2A3E62B0CD35F002EAFF2 /* PlantPulseAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantPulseAppApp.swift; sourceTree = "<group>"; };
-		6AF2A3E82B0CD35F002EAFF2 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		6AF2A3E82B0CD35F002EAFF2 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		6AF2A3EA2B0CD360002EAFF2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6AF2A3ED2B0CD360002EAFF2 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		6AF2A3F82B0CD475002EAFF2 /* plantPulse.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = plantPulse.json; sourceTree = "<group>"; };
+		6AF2A3FA2B0CD48C002EAFF2 /* TimeFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeFormatter.swift; sourceTree = "<group>"; };
+		6AF2A3FC2B0CD4A3002EAFF2 /* AddNewPlantView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewPlantView.swift; sourceTree = "<group>"; };
+		6AF2A3FE2B0CD4DB002EAFF2 /* PlantDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantDetailsView.swift; sourceTree = "<group>"; };
+		6AF2A4012B0CD4F6002EAFF2 /* PlantsModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = PlantsModel.xcdatamodel; sourceTree = "<group>"; };
+		6AF2A4032B0CD539002EAFF2 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
+		6AF2A4052B0CD559002EAFF2 /* Plants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Plants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,8 +65,11 @@
 		6AF2A3E52B0CD35F002EAFF2 /* PlantPulseApp */ = {
 			isa = PBXGroup;
 			children = (
+				6AF2A3F72B0CD45D002EAFF2 /* Helpers */,
+				6AF2A3F62B0CD457002EAFF2 /* Lotties */,
+				6AF2A3F52B0CD449002EAFF2 /* Views */,
+				6AF2A3F42B0CD442002EAFF2 /* Model */,
 				6AF2A3E62B0CD35F002EAFF2 /* PlantPulseAppApp.swift */,
-				6AF2A3E82B0CD35F002EAFF2 /* ContentView.swift */,
 				6AF2A3EA2B0CD360002EAFF2 /* Assets.xcassets */,
 				6AF2A3EC2B0CD360002EAFF2 /* Preview Content */,
 			);
@@ -65,6 +82,42 @@
 				6AF2A3ED2B0CD360002EAFF2 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		6AF2A3F42B0CD442002EAFF2 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				6AF2A4002B0CD4F6002EAFF2 /* PlantsModel.xcdatamodeld */,
+				6AF2A4032B0CD539002EAFF2 /* DataManager.swift */,
+				6AF2A4052B0CD559002EAFF2 /* Plants.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		6AF2A3F52B0CD449002EAFF2 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				6AF2A3E82B0CD35F002EAFF2 /* MainView.swift */,
+				6AF2A3FC2B0CD4A3002EAFF2 /* AddNewPlantView.swift */,
+				6AF2A3FE2B0CD4DB002EAFF2 /* PlantDetailsView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		6AF2A3F62B0CD457002EAFF2 /* Lotties */ = {
+			isa = PBXGroup;
+			children = (
+				6AF2A3F82B0CD475002EAFF2 /* plantPulse.json */,
+			);
+			path = Lotties;
+			sourceTree = "<group>";
+		};
+		6AF2A3F72B0CD45D002EAFF2 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				6AF2A3FA2B0CD48C002EAFF2 /* TimeFormatter.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -127,6 +180,7 @@
 			files = (
 				6AF2A3EE2B0CD360002EAFF2 /* Preview Assets.xcassets in Resources */,
 				6AF2A3EB2B0CD360002EAFF2 /* Assets.xcassets in Resources */,
+				6AF2A3F92B0CD475002EAFF2 /* plantPulse.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -137,8 +191,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6AF2A3E92B0CD35F002EAFF2 /* ContentView.swift in Sources */,
+				6AF2A3FF2B0CD4DB002EAFF2 /* PlantDetailsView.swift in Sources */,
+				6AF2A4062B0CD559002EAFF2 /* Plants.swift in Sources */,
+				6AF2A3E92B0CD35F002EAFF2 /* MainView.swift in Sources */,
+				6AF2A3FD2B0CD4A3002EAFF2 /* AddNewPlantView.swift in Sources */,
+				6AF2A4042B0CD539002EAFF2 /* DataManager.swift in Sources */,
+				6AF2A3FB2B0CD48C002EAFF2 /* TimeFormatter.swift in Sources */,
 				6AF2A3E72B0CD35F002EAFF2 /* PlantPulseAppApp.swift in Sources */,
+				6AF2A4022B0CD4F6002EAFF2 /* PlantsModel.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -344,6 +404,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		6AF2A4002B0CD4F6002EAFF2 /* PlantsModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				6AF2A4012B0CD4F6002EAFF2 /* PlantsModel.xcdatamodel */,
+			);
+			currentVersion = 6AF2A4012B0CD4F6002EAFF2 /* PlantsModel.xcdatamodel */;
+			path = PlantsModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 6AF2A3DB2B0CD35F002EAFF2 /* Project object */;
 }
