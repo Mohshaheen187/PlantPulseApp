@@ -11,7 +11,6 @@ struct MainView: View {
     
     @State private var addPlant: Bool = false
     @State private var selectedIndex: Int = 1
-    @State private var selectedPlant: Plant?
     
     @EnvironmentObject var manager: DataManager
     @Environment(\.managedObjectContext) private var viewContext
@@ -33,7 +32,6 @@ struct MainView: View {
                                 .font(.system(size: 20, weight: .medium, design: .rounded))
                         }
                     }
-                    .tag(plant.id)
                 }
                 .onDelete(perform: deletePlant)
             }
