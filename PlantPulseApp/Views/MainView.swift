@@ -59,22 +59,17 @@ struct MainView: View {
                     }
                 }
                 
-                //                if isPlantAdded {
-                //                    VStack {
-                //                        LottieView(lottieFile: "done")
-                //                            .frame(width: 100, height: 100)
-                //
-                //                        Text("Your plant has been added successfully!")
-                //                            .transition(.slide)
-                //                    }
-                //                    .onAppear {
-                //                        DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
-                //                            withAnimation {
-                //                                isPlantAdded = false
-                //                            }
-                //                        }
-                //                    }
-                //                }
+                if isPlantAdded {
+                    LottieView(lottieFile: "done")
+                        .frame(width: 130, height: 130)
+                        .onAppear {
+                            DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
+                                withAnimation {
+                                    isPlantAdded = false
+                                }
+                            }
+                        }
+                }
             }
         }
     }

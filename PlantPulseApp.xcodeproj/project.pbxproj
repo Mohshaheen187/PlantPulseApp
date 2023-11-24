@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		6AC145232B0ED0D100AF64F8 /* done.json in Resources */ = {isa = PBXBuildFile; fileRef = 6AC145222B0ED0D100AF64F8 /* done.json */; };
+		6A1133162B10F8D30096BA63 /* done.json in Resources */ = {isa = PBXBuildFile; fileRef = 6A1133152B10F8D30096BA63 /* done.json */; };
 		6AF2A3E72B0CD35F002EAFF2 /* PlantPulseAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AF2A3E62B0CD35F002EAFF2 /* PlantPulseAppApp.swift */; };
 		6AF2A3E92B0CD35F002EAFF2 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AF2A3E82B0CD35F002EAFF2 /* MainView.swift */; };
 		6AF2A3EB2B0CD360002EAFF2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6AF2A3EA2B0CD360002EAFF2 /* Assets.xcassets */; };
@@ -26,7 +26,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		6AC145222B0ED0D100AF64F8 /* done.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = done.json; sourceTree = "<group>"; };
+		6A1133152B10F8D30096BA63 /* done.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = done.json; sourceTree = "<group>"; };
 		6AF2A3E32B0CD35F002EAFF2 /* PlantPulseApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PlantPulseApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6AF2A3E62B0CD35F002EAFF2 /* PlantPulseAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantPulseAppApp.swift; sourceTree = "<group>"; };
 		6AF2A3E82B0CD35F002EAFF2 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
@@ -120,7 +120,7 @@
 			children = (
 				6AF2A3F82B0CD475002EAFF2 /* plantPulse.json */,
 				6AF6ED7A2B0E2C3A0006B1C6 /* loading.json */,
-				6AC145222B0ED0D100AF64F8 /* done.json */,
+				6A1133152B10F8D30096BA63 /* done.json */,
 			);
 			path = Lotties;
 			sourceTree = "<group>";
@@ -201,7 +201,7 @@
 				6AF2A3EE2B0CD360002EAFF2 /* Preview Assets.xcassets in Resources */,
 				6AF2A3EB2B0CD360002EAFF2 /* Assets.xcassets in Resources */,
 				6AF6ED7B2B0E2C3A0006B1C6 /* loading.json in Resources */,
-				6AC145232B0ED0D100AF64F8 /* done.json in Resources */,
+				6A1133162B10F8D30096BA63 /* done.json in Resources */,
 				6AF2A3F92B0CD475002EAFF2 /* plantPulse.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
