@@ -18,10 +18,10 @@ struct PlantDetailsView: View {
     
     var body: some View {
         VStack(spacing: 10) {
-//            Image((plants.plantImage != nil) ? plants.plantImage! : "questionmark.circle.fill")
-//                .resizable()
-//                .clipShape(Circle())
-//                .frame(width: 200, height: 200)
+            Image(plants.plantImage ?? "question")
+                .resizable()
+                .clipShape(Circle())
+                .frame(width: 200, height: 200)
             Text(plants.plantType!.capitalized)
                 .font(.system(size: 30, weight: .medium, design: .rounded))
             
