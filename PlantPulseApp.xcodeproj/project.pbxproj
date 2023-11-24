@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6AC145232B0ED0D100AF64F8 /* done.json in Resources */ = {isa = PBXBuildFile; fileRef = 6AC145222B0ED0D100AF64F8 /* done.json */; };
 		6AF2A3E72B0CD35F002EAFF2 /* PlantPulseAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AF2A3E62B0CD35F002EAFF2 /* PlantPulseAppApp.swift */; };
 		6AF2A3E92B0CD35F002EAFF2 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AF2A3E82B0CD35F002EAFF2 /* MainView.swift */; };
 		6AF2A3EB2B0CD360002EAFF2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6AF2A3EA2B0CD360002EAFF2 /* Assets.xcassets */; };
@@ -20,12 +21,12 @@
 		6AF2A4062B0CD559002EAFF2 /* Plants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AF2A4052B0CD559002EAFF2 /* Plants.swift */; };
 		6AF6ED792B0E2BE10006B1C6 /* AlertsHandling.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AF6ED782B0E2BE10006B1C6 /* AlertsHandling.swift */; };
 		6AF6ED7B2B0E2C3A0006B1C6 /* loading.json in Resources */ = {isa = PBXBuildFile; fileRef = 6AF6ED7A2B0E2C3A0006B1C6 /* loading.json */; };
-		6AF6ED7D2B0E2CD60006B1C6 /* done.json in Resources */ = {isa = PBXBuildFile; fileRef = 6AF6ED7C2B0E2CD60006B1C6 /* done.json */; };
 		6AF6ED7F2B0E2E0D0006B1C6 /* LottieView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AF6ED7E2B0E2E0D0006B1C6 /* LottieView.swift */; };
 		6AF6ED822B0E2E3C0006B1C6 /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 6AF6ED812B0E2E3C0006B1C6 /* Lottie */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		6AC145222B0ED0D100AF64F8 /* done.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = done.json; sourceTree = "<group>"; };
 		6AF2A3E32B0CD35F002EAFF2 /* PlantPulseApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PlantPulseApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6AF2A3E62B0CD35F002EAFF2 /* PlantPulseAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantPulseAppApp.swift; sourceTree = "<group>"; };
 		6AF2A3E82B0CD35F002EAFF2 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
@@ -40,7 +41,6 @@
 		6AF2A4052B0CD559002EAFF2 /* Plants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Plants.swift; sourceTree = "<group>"; };
 		6AF6ED782B0E2BE10006B1C6 /* AlertsHandling.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertsHandling.swift; sourceTree = "<group>"; };
 		6AF6ED7A2B0E2C3A0006B1C6 /* loading.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = loading.json; sourceTree = "<group>"; };
-		6AF6ED7C2B0E2CD60006B1C6 /* done.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = done.json; sourceTree = "<group>"; };
 		6AF6ED7E2B0E2E0D0006B1C6 /* LottieView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LottieView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -120,7 +120,7 @@
 			children = (
 				6AF2A3F82B0CD475002EAFF2 /* plantPulse.json */,
 				6AF6ED7A2B0E2C3A0006B1C6 /* loading.json */,
-				6AF6ED7C2B0E2CD60006B1C6 /* done.json */,
+				6AC145222B0ED0D100AF64F8 /* done.json */,
 			);
 			path = Lotties;
 			sourceTree = "<group>";
@@ -201,7 +201,7 @@
 				6AF2A3EE2B0CD360002EAFF2 /* Preview Assets.xcassets in Resources */,
 				6AF2A3EB2B0CD360002EAFF2 /* Assets.xcassets in Resources */,
 				6AF6ED7B2B0E2C3A0006B1C6 /* loading.json in Resources */,
-				6AF6ED7D2B0E2CD60006B1C6 /* done.json in Resources */,
+				6AC145232B0ED0D100AF64F8 /* done.json in Resources */,
 				6AF2A3F92B0CD475002EAFF2 /* plantPulse.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

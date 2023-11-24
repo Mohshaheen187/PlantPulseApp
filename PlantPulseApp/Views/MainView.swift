@@ -6,54 +6,75 @@
 //
 
 import SwiftUI
+import Lottie
 
 struct MainView: View {
     
     @State private var addPlant: Bool = false
     @State private var selectedIndex: Int = 1
+    @State private var isPlantAdded : Bool = false
     
     @EnvironmentObject var manager: DataManager
     @Environment(\.managedObjectContext) private var viewContext
-    @FetchRequest(sortDescriptors: []) private var plants: FetchedResults<Plant>
+    @FetchRequest(sortDescriptors: [SortDescriptor(\.date, order: .reverse)]) var plants: FetchedResults<Plant>
     
     var body: some View {
         NavigationView {
-            List {
-                ForEach(plants) { plant in
-                    NavigationLink {
-                        PlantDetailsView(plants: plant)
-                    } label: {
-                        HStack {
-                            Image((plant.plantImage != nil) ? plant.plantImage! : "questionmark.circle.fill")
-                                .resizable()
-                                .frame(width: 70, height: 70)
-                                .clipShape(Circle())
-                            Text(plant.plantType!.capitalized)
-                                .font(.system(size: 20, weight: .medium, design: .rounded))
+            ZStack {
+                List {
+                    ForEach(plants) { plant in
+                        NavigationLink {
+                            PlantDetailsView(plants: plant)
+                        } label: {
+                            HStack {
+                                Image(plant.plantImage ?? "question")
+                                    .resizable()
+                                    .frame(width: 70, height: 70)
+                                    .clipShape(Circle())
+                                Text((plant.plantType != nil) ? plant.plantType! : "Unknown Plant Type")
+                                    .font(.system(size: 20, weight: .medium, design: .rounded))
+                            }
                         }
                     }
+                    .onDelete(perform: deletePlant)
                 }
-                .onDelete(perform: deletePlant)
-            }
-            .navigationTitle("Plants")
-            .listStyle(.inset)
-            .toolbar {
-                ToolbarItem(placement: .topBarTrailing) {
-                    Button(action: {
-                        addPlant = true
-                    }, label: {
-                        Image(systemName: "plus.circle.fill")
-                    })
-                    .sheet(isPresented: $addPlant, content: {
-                        AddNewPlantView()
-                            .presentationDragIndicator(.visible)
-                            .presentationDetents([.fraction(0.5)])
-                    })
+                .navigationTitle("Plants")
+                .listStyle(.inset)
+                .toolbar {
+                    ToolbarItem(placement: .topBarTrailing) {
+                        Button(action: {
+                            addPlant = true
+                        }, label: {
+                            Image(systemName: "plus.circle.fill")
+                        })
+                        .sheet(isPresented: $addPlant, content: {
+                            AddNewPlantView(isPlantAdded: $isPlantAdded)
+                                .presentationDragIndicator(.visible)
+                                .presentationDetents([.fraction(0.5)])
+                        })
+                    }
+                    
+                    ToolbarItem(placement: .topBarLeading) {
+                        EditButton()
+                    }
                 }
                 
-                ToolbarItem(placement: .topBarLeading) {
-                    EditButton()
-                }
+                //                if isPlantAdded {
+                //                    VStack {
+                //                        LottieView(lottieFile: "done")
+                //                            .frame(width: 100, height: 100)
+                //
+                //                        Text("Your plant has been added successfully!")
+                //                            .transition(.slide)
+                //                    }
+                //                    .onAppear {
+                //                        DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
+                //                            withAnimation {
+                //                                isPlantAdded = false
+                //                            }
+                //                        }
+                //                    }
+                //                }
             }
         }
     }

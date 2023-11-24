@@ -18,7 +18,6 @@ class DataManager : ObservableObject {
             }
         }
     }
-    
     func saveNewPlant(context: NSManagedObjectContext) {
         do {
             try context.save()
@@ -28,13 +27,13 @@ class DataManager : ObservableObject {
         }
     }
     
-    func addPlant(plantType: String, date: Date, image: String, context: NSManagedObjectContext) {
+    func addPlant(plantType: String, date: Date, plantImage: String, context: NSManagedObjectContext) {
         let newPlant = Plant(context: context)
         
         newPlant.id = UUID()
         newPlant.plantType = plantType
+        newPlant.plantImage = plantImage
         newPlant.date = date
-        newPlant.plantImage = image
         
         saveNewPlant(context: context)
     }
