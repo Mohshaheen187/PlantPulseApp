@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		6A1133162B10F8D30096BA63 /* done.json in Resources */ = {isa = PBXBuildFile; fileRef = 6A1133152B10F8D30096BA63 /* done.json */; };
+		6A3F04E82B1BF8650025D00C /* PlantsInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A3F04E72B1BF8650025D00C /* PlantsInfo.swift */; };
+		6AA489B22B179B4100855DEC /* MostRecentPlantsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AA489B12B179B4100855DEC /* MostRecentPlantsView.swift */; };
+		6AEE6B922B180976008F97BD /* HomeTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AEE6B912B180976008F97BD /* HomeTabView.swift */; };
 		6AF2A3E72B0CD35F002EAFF2 /* PlantPulseAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AF2A3E62B0CD35F002EAFF2 /* PlantPulseAppApp.swift */; };
 		6AF2A3E92B0CD35F002EAFF2 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AF2A3E82B0CD35F002EAFF2 /* MainView.swift */; };
 		6AF2A3EB2B0CD360002EAFF2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6AF2A3EA2B0CD360002EAFF2 /* Assets.xcassets */; };
@@ -27,6 +30,9 @@
 
 /* Begin PBXFileReference section */
 		6A1133152B10F8D30096BA63 /* done.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = done.json; sourceTree = "<group>"; };
+		6A3F04E72B1BF8650025D00C /* PlantsInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantsInfo.swift; sourceTree = "<group>"; };
+		6AA489B12B179B4100855DEC /* MostRecentPlantsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MostRecentPlantsView.swift; sourceTree = "<group>"; };
+		6AEE6B912B180976008F97BD /* HomeTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTabView.swift; sourceTree = "<group>"; };
 		6AF2A3E32B0CD35F002EAFF2 /* PlantPulseApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PlantPulseApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6AF2A3E62B0CD35F002EAFF2 /* PlantPulseAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantPulseAppApp.swift; sourceTree = "<group>"; };
 		6AF2A3E82B0CD35F002EAFF2 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
@@ -107,10 +113,13 @@
 		6AF2A3F52B0CD449002EAFF2 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				6AEE6B912B180976008F97BD /* HomeTabView.swift */,
 				6AF2A3E82B0CD35F002EAFF2 /* MainView.swift */,
 				6AF2A3FC2B0CD4A3002EAFF2 /* AddNewPlantView.swift */,
 				6AF2A3FE2B0CD4DB002EAFF2 /* PlantDetailsView.swift */,
 				6AF6ED7E2B0E2E0D0006B1C6 /* LottieView.swift */,
+				6AA489B12B179B4100855DEC /* MostRecentPlantsView.swift */,
+				6A3F04E72B1BF8650025D00C /* PlantsInfo.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -214,7 +223,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				6AF2A3FF2B0CD4DB002EAFF2 /* PlantDetailsView.swift in Sources */,
+				6A3F04E82B1BF8650025D00C /* PlantsInfo.swift in Sources */,
 				6AF2A4062B0CD559002EAFF2 /* Plants.swift in Sources */,
+				6AA489B22B179B4100855DEC /* MostRecentPlantsView.swift in Sources */,
+				6AEE6B922B180976008F97BD /* HomeTabView.swift in Sources */,
 				6AF2A3E92B0CD35F002EAFF2 /* MainView.swift in Sources */,
 				6AF2A3FD2B0CD4A3002EAFF2 /* AddNewPlantView.swift in Sources */,
 				6AF2A4042B0CD539002EAFF2 /* DataManager.swift in Sources */,
