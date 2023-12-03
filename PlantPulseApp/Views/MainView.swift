@@ -55,7 +55,7 @@ struct MainView: View {
                     }
                     .onDelete(perform: deletePlant)
                 } header: {
-                    Text("All plants")
+                    Text("My plants")
                 }
                 .navigationTitle("Plants")
                 .listStyle(.inset)
