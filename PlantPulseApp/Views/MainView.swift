@@ -18,6 +18,8 @@ struct MainView: View {
     @Environment(\.managedObjectContext) private var viewContext
     @FetchRequest(sortDescriptors: [SortDescriptor(\.date, order: .reverse)]) var plants: FetchedResults<Plant>
     
+    @State private var successMessage : AlertsHandling?
+    
     var body: some View {
         NavigationStack {
             List {
