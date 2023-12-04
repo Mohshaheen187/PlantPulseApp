@@ -26,7 +26,15 @@ struct MainView: View {
                 List {
                     Section {
                         TabView(selection: $selectedIndex) {
-                            MostRecentPlantsView()
+                            if plants.isEmpty {
+                                Text("You don't have any plants")
+                                    .font(.system(size: 25, weight: .medium, design: .rounded))
+                                    .foregroundStyle(.secondary)
+                                    .frame(alignment: .center)
+                                    .indexViewStyle(.page(backgroundDisplayMode: .never))
+                            } else {
+                                MostRecentPlantsView()
+                            }
                         }
                         .tabViewStyle(.page(indexDisplayMode: .always))
                         .indexViewStyle(.page(backgroundDisplayMode: .always))
