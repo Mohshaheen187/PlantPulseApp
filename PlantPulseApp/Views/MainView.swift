@@ -90,6 +90,7 @@ struct MainView: View {
                         addPlant = true
                     }, label: {
                         Image(systemName: "plus.circle.fill")
+                            .font(.title2)
                     })
                     .sheet(isPresented: $addPlant, content: {
                         AddNewPlantView(isPlantAdded: $isPlantAdded)
@@ -100,6 +101,7 @@ struct MainView: View {
                 
                 ToolbarItem(placement: .topBarLeading) {
                     EditButton()
+                        .font(.title2)
                 }
             }
         }
