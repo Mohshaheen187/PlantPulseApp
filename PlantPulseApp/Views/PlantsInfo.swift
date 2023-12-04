@@ -86,17 +86,15 @@ struct plantInfoDetails : View {
             }
             .padding()
             
-            Section {
+            VStack(alignment: .leading, spacing: 10) {
+                Text("What do you know about \(plant.name)?")
+                    .font(.headline)
+                    .foregroundStyle(.secondary)
                 Text(plant.description)
                     .font(.system(size: 17, weight: .medium, design: .rounded))
                     .fixedSize(horizontal: false, vertical: true)
-                    .padding()
-            } header: {
-                Text("What do you know about \(plant.name)?")
-                    .padding()
-                    .font(.headline)
-                    .foregroundStyle(.secondary)
             }
+            .padding()
             
             Spacer()
         }
