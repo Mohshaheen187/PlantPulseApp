@@ -58,7 +58,7 @@ struct plantInfoDetails : View {
         VStack(alignment: .leading) {
             Image(plant.imageName)
                 .resizable()
-                .aspectRatio(contentMode: .fit)
+                .frame(width: 400, height: 230)
             
             HStack(alignment: .top) {
                 
