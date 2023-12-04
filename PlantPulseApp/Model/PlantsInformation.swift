@@ -25,7 +25,7 @@ let plantsData: [PlantsInformation] = [
     
     PlantsInformation(id: 4, name: "Fern", imageName: "fern", wateringFrequency: "Regularly to keep soil consistently moist", temperature: "18-24°C", description: "Ferns are lush, green plants with delicate fronds. They prefer high humidity and indirect light. Keep the soil consistently moist and provide a humid environment to promote optimal growth."),
     
-    PlantsInformation(id: 5, name: "Sunflower", imageName: "sun flower", wateringFrequency: "Regularly, keeping soil evenly moist", temperature: "18-27°C", description: "Sunflowers are vibrant, sun-loving plants known for their large, cheerful blooms. They thrive in full sunlight and well-drained soil. Adequate watering and support for tall stems contribute to healthy sunflower growth."),
+    PlantsInformation(id: 5, name: "Sun Flower", imageName: "sun flower", wateringFrequency: "Regularly, keeping soil evenly moist", temperature: "18-27°C", description: "Sunflowers are vibrant, sun-loving plants known for their large, cheerful blooms. They thrive in full sunlight and well-drained soil. Adequate watering and support for tall stems contribute to healthy sunflower growth."),
     
     PlantsInformation(id: 6, name: "Conifers", imageName: "conifers", wateringFrequency: "Regularly, allowing soil to dry between waterings", temperature: "15-24°C", description: "Conifers are evergreen trees and shrubs with needle-like leaves. They prefer well-drained soil and are adaptable to various temperatures. Consistent watering and occasional pruning contribute to their health."),
     

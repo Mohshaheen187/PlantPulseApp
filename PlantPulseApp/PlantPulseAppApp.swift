@@ -9,12 +9,9 @@ import SwiftUI
 
 @main
 struct PlantPulseAppApp: App {
-    //@StateObject private var manager = DataManager()
     
     var body: some Scene {
         WindowGroup {
-            //MainView()
-                
             HomeTabView()
         }
     }

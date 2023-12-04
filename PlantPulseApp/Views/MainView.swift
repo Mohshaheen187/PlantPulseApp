@@ -53,12 +53,13 @@ struct MainView: View {
                                         .resizable()
                                         .frame(width: 70, height: 70)
                                         .clipShape(Circle())
-                                    Text((plant.plantType != nil) ? plant.plantType! : "Unknown Plant Type")
-                                        .font(.system(size: 20, weight: .medium, design: .rounded))
-                                    Spacer()
-                                    Text(calcTimeSince(date: plant.date!))
-                                        .font(.subheadline)
-                                        .foregroundStyle(.secondary)
+                                    VStack(alignment: .leading, spacing: 5) {
+                                        Text((plant.plantType != nil) ? plant.plantType!.capitalized : "Unknown Plant Type")
+                                            .font(.system(size: 20, weight: .medium, design: .rounded))
+                                        Text(calcTimeSince(date: plant.date!))
+                                            .font(.subheadline)
+                                            .foregroundStyle(.secondary)
+                                    }
                                 }
                             }
                         }
