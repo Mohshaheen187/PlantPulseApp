@@ -18,50 +18,63 @@ struct MainView: View {
     @Environment(\.managedObjectContext) private var viewContext
     @FetchRequest(sortDescriptors: [SortDescriptor(\.date, order: .reverse)]) var plants: FetchedResults<Plant>
     
-    @State private var successMessage : AlertsHandling?
+    @Environment (\.dismiss) var dismiss
     
     var body: some View {
         NavigationStack {
-            List {
-                Section {
-                    TabView(selection: $selectedIndex) {
-                        MostRecentPlantsView()
+            ZStack {
+                List {
+                    Section {
+                        TabView(selection: $selectedIndex) {
+                            MostRecentPlantsView()
+                        }
+                        .tabViewStyle(.page(indexDisplayMode: .always))
+                        .indexViewStyle(.page(backgroundDisplayMode: .always))
+                        .frame(idealHeight: 250)
+                    } header: {
+                        Text("Most recent plants")
                     }
-                    .tabViewStyle(.page(indexDisplayMode: .always))
-                    .indexViewStyle(.page(backgroundDisplayMode: .always))
-                    .frame(idealHeight: 250)
-                } header: {
-                    Text("Most recent plants")
-                }
-                
-                Section {
-                    ForEach(plants) { plant in
-                        NavigationLink {
-                            PlantDetailsView(plants: plant)
-                        } label: {
-                            HStack {
-                                Image(plant.plantImage ?? "question")
-                                    .resizable()
-                                    .frame(width: 70, height: 70)
-                                    .clipShape(Circle())
-                                Text((plant.plantType != nil) ? plant.plantType! : "Unknown Plant Type")
-                                    .font(.system(size: 20, weight: .medium, design: .rounded))
-                                Spacer()
-                                Text(calcTimeSince(date: plant.date!))
-                                    .font(.subheadline)
-                                    .foregroundStyle(.secondary)
+                    
+                    Section {
+                        ForEach(plants) { plant in
+                            NavigationLink {
+                                PlantDetailsView(plants: plant)
+                            } label: {
+                                HStack {
+                                    Image(plant.plantImage ?? "question")
+                                        .resizable()
+                                        .frame(width: 70, height: 70)
+                                        .clipShape(Circle())
+                                    Text((plant.plantType != nil) ? plant.plantType! : "Unknown Plant Type")
+                                        .font(.system(size: 20, weight: .medium, design: .rounded))
+                                    Spacer()
+                                    Text(calcTimeSince(date: plant.date!))
+                                        .font(.subheadline)
+                                        .foregroundStyle(.secondary)
+                                }
                             }
                         }
+                        .onDelete(perform: deletePlant)
+                    } header: {
+                        Text("My plants")
                     }
-                    .onDelete(perform: deletePlant)
-                } header: {
-                    Text("My plants")
+                    .navigationTitle("Plants")
+                    .listStyle(.inset)
                 }
-                .navigationTitle("Plants")
                 .listStyle(.inset)
+                
+                if isPlantAdded {
+                    LottieView(lottieFile: "done")
+                        .onAppear {
+                            DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
+                                withAnimation {
+                                    isPlantAdded = false
+                                }
+                            }
+                        }
+                }
             }
             .navigationTitle("Dashboard")
-            .listStyle(.inset)
             .toolbar {
                 ToolbarItem(placement: .topBarTrailing) {
                     Button(action: {
