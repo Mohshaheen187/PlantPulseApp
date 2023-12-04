@@ -25,7 +25,7 @@ struct MostRecentPlantsView: View {
                 
                 VStack(alignment: .leading) {
                     Text(plant.plantType?.capitalized ?? "Unknown plant type")
-                        .font(.system(size: 25, weight: .medium, design: .rounded))
+                        .font(.system(size: 20, weight: .medium, design: .rounded))
                         .foregroundStyle(.black)
                     Text(calcTimeSince(date: plant.date!))
                         .font(.system(size: 15, weight: .medium, design: .rounded))
