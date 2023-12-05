@@ -27,8 +27,8 @@ struct MainView: View {
                     Section {
                         TabView(selection: $selectedIndex) {
                             if plants.isEmpty {
-                                Text("You don't have any plants")
-                                    .font(.system(size: 25, weight: .medium, design: .rounded))
+                                Text("You don't have any plants yet!😕")
+                                    .font(.custom("Next Sunday", size: 20))
                                     .foregroundStyle(.secondary)
                                     .frame(alignment: .center)
                                     .indexViewStyle(.page(backgroundDisplayMode: .never))
@@ -41,6 +41,7 @@ struct MainView: View {
                         .frame(idealHeight: 250)
                     } header: {
                         Text("Most recent plants")
+                            .font(.custom("Next Sunday", size: 20))
                     }
                     
                     Section {
@@ -55,9 +56,9 @@ struct MainView: View {
                                         .clipShape(Circle())
                                     VStack(alignment: .leading, spacing: 5) {
                                         Text((plant.plantType != nil) ? plant.plantType!.capitalized : "Unknown Plant Type")
-                                            .font(.system(size: 20, weight: .medium, design: .rounded))
+                                            .font(.custom("Next Sunday", size: 25))
                                         Text(calcTimeSince(date: plant.date!))
-                                            .font(.subheadline)
+                                            .font(.custom("Next Sunday", size: 15))
                                             .foregroundStyle(.secondary)
                                     }
                                 }
@@ -66,8 +67,8 @@ struct MainView: View {
                         .onDelete(perform: deletePlant)
                     } header: {
                         Text("My plants")
+                            .font(.custom("Next Sunday", size: 20))
                     }
-                    .navigationTitle("Plants")
                     .listStyle(.inset)
                 }
                 .listStyle(.inset)
@@ -83,7 +84,7 @@ struct MainView: View {
                         }
                 }
             }
-            .navigationTitle("Dashboard")
+            .navigationTitle("Dashboard🪴")
             .toolbar {
                 ToolbarItem(placement: .topBarTrailing) {
                     Button(action: {

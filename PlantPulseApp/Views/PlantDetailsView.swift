@@ -23,12 +23,14 @@ struct PlantDetailsView: View {
                 .clipShape(Circle())
                 .frame(width: 200, height: 200)
             Text(plants.plantType!.capitalized)
-                .font(.system(size: 30, weight: .medium, design: .rounded))
+                .font(.custom("Next Sunday", size: 30))
             
             if let lastDateWatered = plants.lastDateWatered {
                 Text("Last time watered: \(lastDateWatered.formatted(.dateTime.day().month().year().hour().minute()))")
+                    .font(.custom("Next Sunday", size: 20))
             } else {
                 Text("Last time watered: Never watered")
+                    .font(.custom("Next Sunday", size: 15))
             }
             
             Spacer()
@@ -44,6 +46,7 @@ struct PlantDetailsView: View {
                 }
             }
             .foregroundStyle(.white)
+            .font(.custom("Next Sunday", size: 20))
             .bold()
             .frame(width: 130, height: 130)
             .background(.linearGradient(colors: [.blue, .purple], startPoint: .bottomLeading, endPoint: .topTrailing))
@@ -67,6 +70,7 @@ struct PlantDetailsView: View {
                         }
                     }
             }
+            .font(.custom("Next Sunday", size: 20))
             
             Spacer()
         }

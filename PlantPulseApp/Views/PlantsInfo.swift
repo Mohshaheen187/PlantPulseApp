@@ -34,7 +34,6 @@ struct PlantsInfo: View {
                                             .clipShape(Circle())
                                             .frame(width: 70, height: 70)
                                         Text(plant.name)
-                                            .font(.system(size: 20, weight: .medium, design: .rounded))
                                     }
                                 }
                         }
@@ -44,6 +43,8 @@ struct PlantsInfo: View {
             }
             .navigationTitle("Plants")
         }
+        .tint(.black)
+        .font(.custom("Next Sunday", size: 17))
     }
 }
 
@@ -65,10 +66,10 @@ struct plantInfoDetails : View {
                 HStack(alignment: .top) {
                     Image(systemName: "drop.fill")
                         .foregroundStyle(.blue)
-                    VStack(alignment: .leading) {
+                    VStack(alignment: .leading, spacing: 9) {
                         Text("Watering frequency:")
                         Text(plant.wateringFrequency)
-                            .font(.subheadline)
+                            .font(.system(size: 14, weight: .medium, design: .rounded))
                     }
                 }
                 
@@ -77,10 +78,10 @@ struct plantInfoDetails : View {
                 HStack(alignment: .top) {
                     Image(systemName: "thermometer.medium")
                         .foregroundStyle(.red)
-                    VStack(alignment: .leading) {
+                    VStack(alignment: .leading, spacing: 9) {
                         Text("Temperature:")
                         Text(plant.temperature)
-                            .font(.subheadline)
+                            .font(.system(size: 14, weight: .medium, design: .rounded))
                     }
                 }
             }
@@ -88,10 +89,10 @@ struct plantInfoDetails : View {
             
             VStack(alignment: .leading, spacing: 10) {
                 Text("What do you know about \(plant.name)?")
-                    .font(.headline)
+                    .font(.custom("Next Sunday", size: 15))
                     .foregroundStyle(.secondary)
                 Text(plant.description)
-                    .font(.system(size: 17, weight: .medium, design: .rounded))
+                    .font(.custom("Next Sunday", size: 17))
                     .fixedSize(horizontal: false, vertical: true)
             }
             .padding()

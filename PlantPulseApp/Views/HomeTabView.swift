@@ -27,6 +27,7 @@ struct HomeTabView: View {
                     Label("Plants", systemImage: "camera.macro")
                 }
         }
+        .tint(.black)
     }
 }
 

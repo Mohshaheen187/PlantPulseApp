@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		6A1133162B10F8D30096BA63 /* done.json in Resources */ = {isa = PBXBuildFile; fileRef = 6A1133152B10F8D30096BA63 /* done.json */; };
+		6A16669B2B1F33D30010FE45 /* BodoniFLF-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6A16669A2B1F33D30010FE45 /* BodoniFLF-Bold.ttf */; };
+		6A16669D2B1F35510010FE45 /* Next Sunday.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6A16669C2B1F35510010FE45 /* Next Sunday.ttf */; };
 		6A3F04E82B1BF8650025D00C /* PlantsInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A3F04E72B1BF8650025D00C /* PlantsInfo.swift */; };
 		6AA489B22B179B4100855DEC /* MostRecentPlantsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AA489B12B179B4100855DEC /* MostRecentPlantsView.swift */; };
 		6AD4A3DD2B1D27800090CD58 /* PlantsInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AD4A3DC2B1D27800090CD58 /* PlantsInformation.swift */; };
@@ -31,6 +33,9 @@
 
 /* Begin PBXFileReference section */
 		6A1133152B10F8D30096BA63 /* done.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = done.json; sourceTree = "<group>"; };
+		6A1666992B1F328A0010FE45 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		6A16669A2B1F33D30010FE45 /* BodoniFLF-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "BodoniFLF-Bold.ttf"; sourceTree = "<group>"; };
+		6A16669C2B1F35510010FE45 /* Next Sunday.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Next Sunday.ttf"; sourceTree = "<group>"; };
 		6A3F04E72B1BF8650025D00C /* PlantsInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantsInfo.swift; sourceTree = "<group>"; };
 		6AA489B12B179B4100855DEC /* MostRecentPlantsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MostRecentPlantsView.swift; sourceTree = "<group>"; };
 		6AD4A3DC2B1D27800090CD58 /* PlantsInformation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantsInformation.swift; sourceTree = "<group>"; };
@@ -64,6 +69,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6A16669E2B1F35B60010FE45 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				6A16669A2B1F33D30010FE45 /* BodoniFLF-Bold.ttf */,
+				6A16669C2B1F35510010FE45 /* Next Sunday.ttf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
 		6AF2A3DA2B0CD35F002EAFF2 = {
 			isa = PBXGroup;
 			children = (
@@ -83,6 +97,8 @@
 		6AF2A3E52B0CD35F002EAFF2 /* PlantPulseApp */ = {
 			isa = PBXGroup;
 			children = (
+				6A1666992B1F328A0010FE45 /* Info.plist */,
+				6A16669E2B1F35B60010FE45 /* Fonts */,
 				6AF2A3F72B0CD45D002EAFF2 /* Helpers */,
 				6AF2A3F62B0CD457002EAFF2 /* Lotties */,
 				6AF2A3F52B0CD449002EAFF2 /* Views */,
@@ -211,9 +227,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				6AF2A3EE2B0CD360002EAFF2 /* Preview Assets.xcassets in Resources */,
+				6A16669B2B1F33D30010FE45 /* BodoniFLF-Bold.ttf in Resources */,
 				6AF2A3EB2B0CD360002EAFF2 /* Assets.xcassets in Resources */,
 				6AF6ED7B2B0E2C3A0006B1C6 /* loading.json in Resources */,
 				6A1133162B10F8D30096BA63 /* done.json in Resources */,
+				6A16669D2B1F35510010FE45 /* Next Sunday.ttf in Resources */,
 				6AF2A3F92B0CD475002EAFF2 /* plantPulse.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -375,6 +393,7 @@
 				DEVELOPMENT_TEAM = RSUPW75C3B;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = PlantPulseApp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -404,6 +423,7 @@
 				DEVELOPMENT_TEAM = RSUPW75C3B;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = PlantPulseApp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
