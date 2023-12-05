@@ -93,10 +93,8 @@ struct MainView: View {
                         Image(systemName: "plus.circle.fill")
                             .font(.title2)
                     })
-                    .sheet(isPresented: $addPlant, content: {
+                    .fullScreenCover(isPresented: $addPlant, content: {
                         AddNewPlantView(isPlantAdded: $isPlantAdded)
-                            .presentationDragIndicator(.visible)
-                            .presentationDetents([.fraction(0.5)])
                     })
                 }
                 
