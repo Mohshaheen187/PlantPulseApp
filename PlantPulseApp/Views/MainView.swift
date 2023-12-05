@@ -55,7 +55,7 @@ struct MainView: View {
                                         .frame(width: 70, height: 70)
                                         .clipShape(Circle())
                                     VStack(alignment: .leading, spacing: 5) {
-                                        Text((plant.plantType != nil) ? plant.plantType!.capitalized : "Unknown Plant Type")
+                                        Text((plant.plantName != nil) ? plant.plantName!.capitalized : "Unknown Plant Type")
                                             .font(.custom("Next Sunday", size: 25))
                                         Text(calcTimeSince(date: plant.date!))
                                             .font(.custom("Next Sunday", size: 15))

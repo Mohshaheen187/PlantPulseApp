@@ -22,7 +22,7 @@ struct PlantDetailsView: View {
                 .resizable()
                 .clipShape(Circle())
                 .frame(width: 200, height: 200)
-            Text(plants.plantType!.capitalized)
+            Text(plants.plantName!.capitalized)
                 .font(.custom("Next Sunday", size: 30))
             
             if let lastDateWatered = plants.lastDateWatered {

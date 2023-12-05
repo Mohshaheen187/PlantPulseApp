@@ -24,7 +24,7 @@ struct MostRecentPlantsView: View {
                     .padding()
                 
                 VStack(alignment: .leading) {
-                    Text(plant.plantType?.capitalized ?? "Unknown plant type")
+                    Text(plant.plantName?.capitalized ?? "Unknown plant type")
                         .font(.custom("Next Sunday", size: 20))
                         .foregroundStyle(.black)
                     Text(calcTimeSince(date: plant.date!))
