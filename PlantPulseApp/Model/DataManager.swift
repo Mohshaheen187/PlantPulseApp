@@ -30,6 +30,7 @@ class DataManager : ObservableObject {
     func addPlant(plantName: String, plantType: String, date: Date, plantImage: String, context: NSManagedObjectContext) {
         let newPlant = Plant(context: context)
         
+        newPlant.id = UUID()
         newPlant.plantName = plantName
         newPlant.plantType = plantType
         newPlant.plantImage = plantImage
