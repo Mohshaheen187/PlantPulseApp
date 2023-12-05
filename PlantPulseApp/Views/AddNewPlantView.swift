@@ -12,7 +12,6 @@ struct AddNewPlantView: View {
     
     @State private var plantName : String = ""
     @State private var selectedPlantType : Plants = .aster
-    @State private var selectedPlantImage : String = ""
     @State private var creationDate : Date = Date.now
     @Binding var isPlantAdded : Bool
     
@@ -73,6 +72,16 @@ struct AddNewPlantView: View {
                     }, label: {
                         Image(systemName: "xmark")
                     })
+                    .foregroundStyle(.white)
+                }
+                
+                ToolbarItem(placement: .topBarTrailing) {
+                    Button("Add") {
+                        DataManager().addPlant(plantName: plantName, plantType: selectedPlantType.rawValue, date: creationDate, plantImage: image?.toPngString() ?? "question", context: moc)
+                        isPlantAdded = true
+                        dismiss()
+                    }
+                    .foregroundStyle(.white)
                 }
             }
             .sheet(isPresented: $showImagePicker, content: {

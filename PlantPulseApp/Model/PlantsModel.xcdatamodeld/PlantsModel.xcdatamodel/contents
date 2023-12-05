@@ -5,6 +5,7 @@
         <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
         <attribute name="lastDateWatered" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="plantImage" optional="YES" attributeType="String"/>
+        <attribute name="plantName" optional="YES" attributeType="String"/>
         <attribute name="plantType" optional="YES" attributeType="String"/>
     </entity>
 </model>

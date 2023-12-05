@@ -16,7 +16,7 @@ struct MostRecentPlantsView: View {
     var body: some View {
         ForEach(plants.prefix(3)) { plant in
             HStack {
-                Image(plant.plantImage ?? "camera.macro")
+                Image(uiImage: (plant.plantImage?.toImage())!)
                     .resizable()
                     .aspectRatio(contentMode: .fill)
                     .clipShape(Circle())

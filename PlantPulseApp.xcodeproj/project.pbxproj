@@ -10,6 +10,8 @@
 		6A1133162B10F8D30096BA63 /* done.json in Resources */ = {isa = PBXBuildFile; fileRef = 6A1133152B10F8D30096BA63 /* done.json */; };
 		6A16669B2B1F33D30010FE45 /* BodoniFLF-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6A16669A2B1F33D30010FE45 /* BodoniFLF-Bold.ttf */; };
 		6A16669D2B1F35510010FE45 /* Next Sunday.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6A16669C2B1F35510010FE45 /* Next Sunday.ttf */; };
+		6A216A1E2B1FC044008378FA /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A216A1D2B1FC044008378FA /* UIImage.swift */; };
+		6A216A202B1FC04F008378FA /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A216A1F2B1FC04F008378FA /* String.swift */; };
 		6A3F04E82B1BF8650025D00C /* PlantsInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A3F04E72B1BF8650025D00C /* PlantsInfo.swift */; };
 		6A6F39B52B1F67B300307DB1 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A6F39B42B1F67B300307DB1 /* ImagePicker.swift */; };
 		6AA489B22B179B4100855DEC /* MostRecentPlantsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AA489B12B179B4100855DEC /* MostRecentPlantsView.swift */; };
@@ -37,6 +39,8 @@
 		6A1666992B1F328A0010FE45 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		6A16669A2B1F33D30010FE45 /* BodoniFLF-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "BodoniFLF-Bold.ttf"; sourceTree = "<group>"; };
 		6A16669C2B1F35510010FE45 /* Next Sunday.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Next Sunday.ttf"; sourceTree = "<group>"; };
+		6A216A1D2B1FC044008378FA /* UIImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImage.swift; sourceTree = "<group>"; };
+		6A216A1F2B1FC04F008378FA /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		6A3F04E72B1BF8650025D00C /* PlantsInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantsInfo.swift; sourceTree = "<group>"; };
 		6A6F39B42B1F67B300307DB1 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 		6AA489B12B179B4100855DEC /* MostRecentPlantsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MostRecentPlantsView.swift; sourceTree = "<group>"; };
@@ -80,6 +84,15 @@
 			path = Fonts;
 			sourceTree = "<group>";
 		};
+		6A216A1B2B1FC018008378FA /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				6A216A1D2B1FC044008378FA /* UIImage.swift */,
+				6A216A1F2B1FC04F008378FA /* String.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		6AF2A3DA2B0CD35F002EAFF2 = {
 			isa = PBXGroup;
 			children = (
@@ -99,6 +112,7 @@
 		6AF2A3E52B0CD35F002EAFF2 /* PlantPulseApp */ = {
 			isa = PBXGroup;
 			children = (
+				6A216A1B2B1FC018008378FA /* Extensions */,
 				6A1666992B1F328A0010FE45 /* Info.plist */,
 				6A16669E2B1F35B60010FE45 /* Fonts */,
 				6AF2A3F72B0CD45D002EAFF2 /* Helpers */,
@@ -255,10 +269,12 @@
 				6AF2A3E92B0CD35F002EAFF2 /* MainView.swift in Sources */,
 				6AD4A3DD2B1D27800090CD58 /* PlantsInformation.swift in Sources */,
 				6AF2A3FD2B0CD4A3002EAFF2 /* AddNewPlantView.swift in Sources */,
+				6A216A1E2B1FC044008378FA /* UIImage.swift in Sources */,
 				6AF2A4042B0CD539002EAFF2 /* DataManager.swift in Sources */,
 				6AF2A3FB2B0CD48C002EAFF2 /* TimeFormatter.swift in Sources */,
 				6AF2A3E72B0CD35F002EAFF2 /* PlantPulseAppApp.swift in Sources */,
 				6AF6ED7F2B0E2E0D0006B1C6 /* LottieView.swift in Sources */,
+				6A216A202B1FC04F008378FA /* String.swift in Sources */,
 				6AF2A4022B0CD4F6002EAFF2 /* PlantsModel.xcdatamodeld in Sources */,
 				6AF6ED792B0E2BE10006B1C6 /* AlertsHandling.swift in Sources */,
 			);

@@ -18,7 +18,7 @@ struct PlantDetailsView: View {
     
     var body: some View {
         VStack(spacing: 10) {
-            Image(plants.plantImage ?? "question")
+            Image(uiImage: (plants.plantImage?.toImage())!)
                 .resizable()
                 .clipShape(Circle())
                 .frame(width: 200, height: 200)

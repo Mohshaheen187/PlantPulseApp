@@ -50,7 +50,7 @@ struct MainView: View {
                                 PlantDetailsView(plants: plant)
                             } label: {
                                 HStack {
-                                    Image(plant.plantImage ?? "question")
+                                    Image(uiImage: (plant.plantImage?.toImage())!)
                                         .resizable()
                                         .frame(width: 70, height: 70)
                                         .clipShape(Circle())
