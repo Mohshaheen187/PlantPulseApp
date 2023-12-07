@@ -50,7 +50,7 @@ struct PlantDetailsView: View {
             .font(.custom("Next Sunday", size: 20))
             .bold()
             .frame(width: 130, height: 130)
-            .background(.linearGradient(colors: [.blue, .purple], startPoint: .bottomLeading, endPoint: .topTrailing))
+            .background(.linearGradient(colors: [.purple, .blue], startPoint: .topLeading, endPoint: .bottomTrailing))
             .clipShape(Circle())
             
             VStack {
