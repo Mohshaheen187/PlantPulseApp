@@ -52,6 +52,7 @@ struct MainView: View {
                                 HStack {
                                     Image(uiImage: (plant.plantImage?.toImage() ?? UIImage(named: "question")!))
                                         .resizable()
+                                        .aspectRatio(contentMode: .fill)
                                         .frame(width: 70, height: 70)
                                         .clipShape(Circle())
                                     VStack(alignment: .leading, spacing: 5) {

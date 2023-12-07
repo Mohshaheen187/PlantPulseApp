@@ -20,6 +20,7 @@ struct PlantDetailsView: View {
         VStack(spacing: 10) {
             Image(uiImage: (plants.plantImage?.toImage() ?? UIImage(named: "question")!))
                 .resizable()
+                .aspectRatio(contentMode: .fill)
                 .clipShape(Circle())
                 .frame(width: 200, height: 200)
             Text(plants.plantName!.capitalized)
