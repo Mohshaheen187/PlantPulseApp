@@ -39,6 +39,7 @@ struct AddNewPlantView: View {
                 
                 List {
                     TextField("Plant name", text: $plantName, axis: .vertical)
+                        .padding(10)
                     
                     Picker("Select plant type", selection: $selectedPlantType) {
                         ForEach(Plants.allCases.sorted(by: { $0.rawValue < $1.rawValue}), id: \.self) { plant in
@@ -47,11 +48,14 @@ struct AddNewPlantView: View {
                         }
                     }
                     .pickerStyle(.navigationLink)
+                    .padding(10)
                     
                     DatePicker("Date planted/bought", selection: $creationDate, in: ...Date.now, displayedComponents: .date)
+                        .padding(10)
                 }
+                .listStyle(.inset)
             }
-            .background(.green)
+            .background(.linearGradient(colors: [.purple, .blue], startPoint: .topLeading, endPoint: .bottomTrailing))
             .confirmationDialog("Choose method", isPresented: $showSheet, titleVisibility: .visible) {
                 
                 Button("Take a picture") {
