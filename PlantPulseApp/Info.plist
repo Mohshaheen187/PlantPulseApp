@@ -7,7 +7,5 @@
 		<string>BodoniFLF-Bold.ttf</string>
 		<string>Next Sunday.ttf</string>
 	</array>
-	<key>NSCameraUsageDescription</key>
-	<string>This app uses the camera to capture your plant.</string>
 </dict>
 </plist>

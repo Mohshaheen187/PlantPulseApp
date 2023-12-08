@@ -7,6 +7,7 @@
 
 import SwiftUI
 import CoreData
+import PhotosUI
 
 struct AddNewPlantView: View {
     
@@ -22,6 +23,9 @@ struct AddNewPlantView: View {
     @State private var showImagePicker : Bool = false
     @State private var sourceType : UIImagePickerController.SourceType = .camera
     @State private var image : UIImage?
+    
+    @State private var selectedItem : PhotosPickerItem?
+    @State private var showCamera = false
     
     var body: some View {
         NavigationStack {
@@ -59,8 +63,9 @@ struct AddNewPlantView: View {
             .confirmationDialog("Choose method", isPresented: $showSheet, titleVisibility: .visible) {
                 
                 Button("Take a picture") {
-                    self.showImagePicker = true
-                    self.sourceType = .camera
+//                    self.showImagePicker = true
+//                    self.sourceType = .camera
+                    showCamera = true
                 }
                 
                 Button("Choose from library") {
@@ -92,10 +97,35 @@ struct AddNewPlantView: View {
             .sheet(isPresented: $showImagePicker, content: {
                 ImagePicker(image: $image)
             })
+            .fullScreenCover(isPresented: $showCamera, content: {
+                accessCameraView(selectedImage: self.$image)
+            })
         }
     }
 }
 
 #Preview {
     AddNewPlantView(isPlantAdded: .constant(false))
+}
+
+struct accessCameraView: UIViewControllerRepresentable {
+    
+    @Binding var selectedImage: UIImage?
+    @Environment (\.dismiss) var dismiss
+    
+    func makeUIViewController(context: Context) -> UIImagePickerController {
+        let imagePicker = UIImagePickerController()
+        imagePicker.sourceType = .camera
+        imagePicker.allowsEditing = true
+        imagePicker.delegate = context.coordinator
+        return imagePicker
+    }
+    
+    func updateUIViewController(_ uiViewController: UIImagePickerController, context: Context) {
+        
+    }
+    
+    func makeCoordinator() -> Coordinator {
+        return Coordinator(picker: self)
+    }
 }
