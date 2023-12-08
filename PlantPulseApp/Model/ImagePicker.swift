@@ -7,50 +7,44 @@
 
 import Foundation
 import SwiftUI
+import PhotosUI
 
-class ImagePickerCoordinator : NSObject, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
-    @Binding var image : UIImage?
-    @Binding var isShown : Bool
+struct ImagePicker: UIViewControllerRepresentable {
+    @Binding var image: UIImage?
     
-    init(image: Binding<UIImage?>, isShown: Binding<Bool>) {
-        _image = image
-        _isShown = isShown
+    func makeUIViewController(context: Context) -> PHPickerViewController {
+        var config = PHPickerConfiguration()
+        config.filter = .images
+        let picker = PHPickerViewController(configuration: config)
+        picker.delegate = context.coordinator
+        return picker
     }
     
-    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-        if let uiImage = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
-            image = uiImage
-            isShown = false
-        }
-    }
-    
-    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
-        isShown = false
-    }
-}
-
-
-struct ImagePicker : UIViewControllerRepresentable {
-    
-    typealias UIViewControllerType = UIImagePickerController
-    typealias Coordinator = ImagePickerCoordinator
-    
-    @Binding var image : UIImage?
-    @Binding var isShown : Bool
-    var sourceType : UIImagePickerController.SourceType = .camera
-    
-    func updateUIViewController(_ uiViewController: UIImagePickerController, context: UIViewControllerRepresentableContext<ImagePicker>) {
+    func updateUIViewController(_ uiViewController: PHPickerViewController, context: Context) {
         
     }
     
-    func makeCoordinator() -> ImagePicker.Coordinator {
-        return ImagePickerCoordinator(image: $image, isShown: $isShown)
+    func makeCoordinator() -> Coordinator {
+        Coordinator(self)
     }
     
-    func makeUIViewController(context: UIViewControllerRepresentableContext<ImagePicker>) -> UIImagePickerController {
-        let picker = UIImagePickerController()
-        picker.sourceType = sourceType
-        picker.delegate = context.coordinator
-        return picker
+    class Coordinator: NSObject, PHPickerViewControllerDelegate {
+        let parent: ImagePicker
+        
+        init(_ parent: ImagePicker) {
+            self.parent = parent
+        }
+        
+        func picker(_ picker: PHPickerViewController, didFinishPicking results: [PHPickerResult]) {
+            picker.dismiss(animated: true)
+            
+            guard let provider = results.first?.itemProvider else { return }
+            
+            if provider.canLoadObject(ofClass: UIImage.self) {
+                provider.loadObject(ofClass: UIImage.self) { image, _ in
+                    self.parent.image = image as? UIImage
+                }
+            }
+        }
     }
 }

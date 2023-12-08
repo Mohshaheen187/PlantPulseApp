@@ -90,7 +90,7 @@ struct AddNewPlantView: View {
                 }
             }
             .sheet(isPresented: $showImagePicker, content: {
-                ImagePicker(image: $image, isShown: self.$showImagePicker, sourceType: self.sourceType)
+                ImagePicker(image: $image)
             })
         }
     }
