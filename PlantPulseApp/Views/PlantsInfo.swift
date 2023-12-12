@@ -43,7 +43,7 @@ struct PlantsInfo: View {
             }
             .navigationTitle("Plants")
         }
-        .tint(.black)
+        .tint(.primary)
         .font(.custom("Next Sunday", size: 17))
     }
 }
