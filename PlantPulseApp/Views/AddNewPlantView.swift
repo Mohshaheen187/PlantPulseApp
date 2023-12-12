@@ -24,7 +24,6 @@ struct AddNewPlantView: View {
     @State private var sourceType : UIImagePickerController.SourceType = .camera
     @State private var image : UIImage?
     
-    @State private var selectedItem : PhotosPickerItem?
     @State private var showCamera = false
     
     var body: some View {
@@ -63,8 +62,6 @@ struct AddNewPlantView: View {
             .confirmationDialog("Choose method", isPresented: $showSheet, titleVisibility: .visible) {
                 
                 Button("Take a picture") {
-//                    self.showImagePicker = true
-//                    self.sourceType = .camera
                     showCamera = true
                 }
                 
