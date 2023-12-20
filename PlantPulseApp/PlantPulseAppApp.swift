@@ -9,9 +9,10 @@ import SwiftUI
 
 @main
 struct PlantPulseAppApp: App {
+    
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            HomeTabView()
         }
     }
 }
