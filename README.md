@@ -46,4 +46,4 @@ The system keeps you informed wherever you are. Receive notifications on your mo
 
 1. **Clone the Repository:**
    ```bash
-   git clone https://github.com/your-username/plant-watering-system.git
+   git clone https://github.com/Mohshaheen187/PlantPulseApp.git
